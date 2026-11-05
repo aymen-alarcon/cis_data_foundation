@@ -256,7 +256,7 @@ const QUESTIONS = [
   {
     "id": 18,
     "topic": "Ingestion — SGC",
-    "question": "AMDB Administrator needs the fastest time to value solution for effectively ingesting, managing, and maintaining Cls and relationships. Which management tool will accomplish this to import Windows computer data from SCCM?",
+    "question": "CMDB Administrator needs the fastest time to value solution for effectively ingesting, managing, and maintaining Cls and relationships. Which management tool will accomplish this to import Windows computer data from SCCM?",
     "options": [
       "Import set using JDBC data source connection to SCCM using transform maps",
       "SCCM Usage Metering Spoke",
@@ -1276,7 +1276,7 @@ const QUESTIONS = [
       "Many-to-many"
     ],
     "correct": [
-      2
+      3
     ],
     "explanation": "From a single Application Server to its hosted Applications, one server can host several applications, giving a one-to-many relationship in that direction. A many-to-many relationship would require the additional fact that an application can be hosted on multiple servers.",
     "status": "practice",

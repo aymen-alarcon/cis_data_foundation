@@ -37,3 +37,13 @@ button{min-height:46px}
  footer{padding:20px 4px}
 }
 @media(max-width:360px){.shell{padding:8px}.panel{padding:17px 12px}.pill{font-size:10px}.brand strong{font-size:12px}.brand small{font-size:10px}.stats>div{padding:8px 5px}.stats span{font-size:10px}.choice{font-size:14px}}
+
+/* Audit notice and citation links */
+.auditNotice{border:1px solid #507b7f;background:#102a35;border-radius:12px;padding:15px;margin:22px 0 4px}
+.auditNotice p{margin:8px 0 13px;color:var(--muted)}
+.auditNotice strong{color:var(--accent)}
+.reference{font-size:13px;margin-top:8px}
+.reference a{color:#9fceff;text-decoration:underline;overflow-wrap:anywhere}
+.optionsReview{white-space:pre-line;color:var(--muted);font-size:13px}
+.reviewCard{scroll-margin-top:10px}
+@media(max-width:700px){.auditNotice button{width:100%;min-height:48px}}

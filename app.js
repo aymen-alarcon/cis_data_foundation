@@ -1,7 +1,10 @@
 const $=id=>document.getElementById(id);let exam=[],answers={},index=0,showAll=false;const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};// Subject tags are based on the original topic of each question.
 // Shared CMDB/CSDM material is assigned to its closest exam domain.
 const csdmTopics=new Set(['CSDM Dashboard','Information Objects','CSDM Domains','CSDM Lifecycle','CSDM Crawl','CSDM Maturity','CSDM Stages','CSDM Playbooks','CSDM Roles','CSDM Walk','CSDM Incident','CSDM Classes','Technical Service Offerings','Group Synchronization','Change Management','Security Operations','Incident Routing']);
-const subjectOf=q=>(csdmTopics.has(q.topic)||/CSDM|Information Objects|Technical Service Offering|Business Service|Service Consumption|Service Delivery|Design and Planning|Change Management|Incident Routing/i.test(q.topic))?'csdm':'cmdb';
+// Governance questions about service ownership and business criticality belong to CSDM.
+// Other governance questions about CMDB operations and CI data stay in CMDB.
+const csdmGovernanceQuestionIds=new Set([23,90]);
+const subjectOf=q=>(csdmGovernanceQuestionIds.has(q.id)||csdmTopics.has(q.topic)||/CSDM|Information Objects|Technical Service Offering|Business Service|Service Consumption|Service Delivery|Design and Planning|Change Management|Incident Routing/i.test(q.topic))?'csdm':'cmdb';
 const getSubject=()=>document.querySelector('input[name="subject"]:checked').value;
 const eligibleQuestions=()=>QUESTIONS.filter(q=>getSubject()==='both'||subjectOf(q)===getSubject());
 function updateSubject(){
